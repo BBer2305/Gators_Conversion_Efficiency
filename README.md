@@ -14,32 +14,35 @@ For those unfamiliar with the sport, an offense has four tries (called downs) to
 
 ==Dataset Attributes==
 
-Column					Description						Feature Type	Data Type
-Down					3rd or 4th Down						Categorical	Integer
-Score Differential			Florida Score - Opponent Score				Numerical	Integer
-Current Quarter				Quarter the game is in (1,2,3,4)			Categorical	Integer
-Opponent Offense 			Offense SP+ at end of season				Numerical	Double
-Opponent Offense Rank			Offense SP+ Rank Among FBS Teams			Numerical	Integer
-Rush Efficiency				Opponent Yards Per Rush					Numerical	Double
-Rush Rank				Opponent Yards Per Rush Rank Among FBS Teams		Numerical	Integer
-Pass Efficiency				Opponent Yards Per Pass Atempt				Numerical	Double
-Pass Rank				Opponent Yards Per Pass Atempt Rank Among FBS Teams	Numerical	Integer
-Rush Grade				Opponent Offense SP+ Rank + Yards Per Rush		Numerical	Integer
-Pass Grade				Opponent Offense SP+ Rank + Yards Per Pass Attempt	Numerical	Integer
-Opponent Play				Run or Pass						Categorical	String
-Yards-To-Go				3rd-and-?						Numerical	Integer
-Yards-To-Goal				# of yards away from touchdown				Numerical	Integer
-Number of Yards Gained			Likely won't be utilized				Numerical	Integer
-Location				Away, Neutral, Home					Categorical	String
-Result					Conversion,Non-Conversion,Sack,Interception,Fumble	Categorical	String
+The data collected is below. However, some of these were found to be redundant and will not be included in the final model (see R_Model.R for more details).
+Column					Description						Feature Type	Data Type	Included
+Down					3rd or 4th Down						Categorical	Integer		Yes
+Score Differential			Florida Score - Opponent Score				Numerical	Integer		Yes
+Current Quarter				Quarter the game is in (1,2,3,4)			Categorical	Integer		Yes
+Opponent Offense 			Offense SP+ at end of season				Numerical	Double		No
+Opponent Offense Rank			Offense SP+ Rank Among FBS Teams			Numerical	Integer		Yes
+Rush Efficiency				Opponent Yards Per Rush					Numerical	Double		No
+Rush Rank				Opponent Yards Per Rush Rank Among FBS Teams		Numerical	Integer		Yes
+Pass Efficiency				Opponent Yards Per Pass Atempt				Numerical	Double		No
+Pass Rank				Opponent Yards Per Pass Atempt Rank Among FBS Teams	Numerical	Integer		Yes
+Rush Grade				Opponent Offense SP+ Rank + Yards Per Rush		Numerical	Integer		No
+Pass Grade				Opponent Offense SP+ Rank + Yards Per Pass Attempt	Numerical	Integer		No
+Opponent Play				Run or Pass						Categorical	String		Yes
+Yards-To-Go				3rd-and-?						Numerical	Integer		Yes
+Yards-To-Goal				# of yards away from touchdown				Numerical	Integer		Yes
+Number of Yards Gained			Likely won't be utilized				Numerical	Integer		No
+Location				Away, Neutral, Home					Categorical	String		Yes
+Result					Conversion,Non-Conversion,Sack,Interception,Fumble	Categorical	String		Yes
 
 ==Important Files Contained in Repository==
+
+WARNING: TensorFlow and its features may prove difficult to install properly. This may or may not take several hours to install properly. I found that Protobuf needed be installed as version 3.6.0 for the code to compile properly. I have found TensorFlow 2.0.0 to work best too.
 
 prog.py - File where the model can be interacted with. Only file that needs to be run.
 > python prog.py
 model.py - File where model is to be created and trained.
 > python model.py
-> requires 1. numpy, 2. pandas, 3. tensorflow to run.
+> requires 1. numpy, 2. pandas, 3. tensorflow 4. keras 5. sklearn among other libraries to run.
 R_Model.R - Random forest tree created using dataset. Used to check data viability before creating model.py.
 > Can be run in R Studio
 Conversion_Results.xlsx - File where data was inserted into.
@@ -48,7 +51,7 @@ Conversion_Results.csv - Same as Excel Workbook but without 'formatting'. The fi
 2019RushE.csv - see above
 model.h5 (not created yet) - Saved model will be created when training is complete.
 
-==Source==
+==Sources==
 This project could not be done without the following (both for model training and webscraping purposes). These have been instrumental for supplying model input.
 
 https://www.espn.com/college-football/team/schedule/_/id/57/season/2018 (this link is used with the ending '/2019' as well)
@@ -59,4 +62,4 @@ https://www.espn.com/college-football/story/_/id/28251219/sp+-rankings-conferenc
 
 ==Progress==
 
-Project is still in its early stages. The data has been collected and is ready to be trained, but the model itself still needs to be built. Additionally, the functionality in the prog.py has not been implemented.
+The data has been collected and is ready to be trained. The model itself is close to completion but is not ready to be trained at this time. Additionally, the functionality in the prog.py has not been implemented.
