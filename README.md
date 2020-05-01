@@ -42,18 +42,33 @@ Result					Conversion,Non-Conversion,Sack,Interception,Fumble	Categorical	String
 WARNING: TensorFlow and its features may prove difficult to install properly. This may or may not take several hours to install properly. I found that Protobuf needed be installed as version 3.6.0 for the code to compile properly. I have found TensorFlow 2.0.0 to work best too. The Python code was written in version 3.6.0. Using an older version (particularly below 3.0.0 would cause problems in compiling the code). This code has only been tested in Windows and I cannot gurantee that it would work in a different OS. 
 
 prog.py - File where the model can be interacted with. Only file that needs to be run.
-  python prog.py
+
+-- python prog.py
+
 model.py - File where model is to be created and trained.
+
 -- python model.py
+
 -- requires 1. numpy, 2. pandas, 3. tensorflow 4. keras 5. sklearn among other libraries to run.
+
 storage.py - File that stores a few pre-defined lists. It is incorporated by prog.py and is not necessary to understand.
+
 R_Model.R - Random forest tree created using dataset. Used to check data viability before creating model.py.
-  Can be run in R Studio
+
+-- Can be run in R Studio
+
 Conversion_Results.xlsx - File where data was inserted into.
+
 Conversion_Results.csv - Same as Excel Workbook but without 'formatting'. The file used by model.py and R_Model.R to download dataset.
-2018RushE.csv - file containing data to be inputted into model
-2019RushE.csv - see above
+
+2018RushE.csv - File containing data to be inputted into model
+
+2019RushE.csv - See above
+
 model.h5 (not created yet) - Saved model will be created when training is complete.
+
+sp_data.txt - Used solely for testing purposes, should be deleted later on
+
 
 ==Sources==
 This project could not be done without the following (both for model training and webscraping purposes). These have been instrumental for supplying model input.
