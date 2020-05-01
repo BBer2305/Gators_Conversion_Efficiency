@@ -44,8 +44,8 @@ WARNING: TensorFlow and its features may prove difficult to install properly. Th
 prog.py - File where the model can be interacted with. Only file that needs to be run.
   python prog.py
 model.py - File where model is to be created and trained.
-> python model.py
-> requires 1. numpy, 2. pandas, 3. tensorflow 4. keras 5. sklearn among other libraries to run.
+-- python model.py
+-- requires 1. numpy, 2. pandas, 3. tensorflow 4. keras 5. sklearn among other libraries to run.
 storage.py - File that stores a few pre-defined lists. It is incorporated by prog.py and is not necessary to understand.
 R_Model.R - Random forest tree created using dataset. Used to check data viability before creating model.py.
   Can be run in R Studio
