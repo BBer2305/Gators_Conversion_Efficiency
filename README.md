@@ -18,23 +18,41 @@ For those unfamiliar with the sport, an offense has four tries (called downs) to
 ==Dataset Attributes==
 
 The data collected is below. However, some of these were found to be redundant and will not be included in the final model (see R_Model.R for more details).
+
 Column					Description						Feature Type	Data Type	Included
+
 Down					3rd or 4th Down						Categorical	Integer		Yes
+
 Score Differential			Florida Score - Opponent Score				Numerical	Integer		Yes
+
 Current Quarter				Quarter the game is in (1,2,3,4)			Categorical	Integer		Yes
+
 Opponent Offense 			Offense SP+ at end of season				Numerical	Double		No
+
 Opponent Offense Rank			Offense SP+ Rank Among FBS Teams			Numerical	Integer		Yes
+
 Rush Efficiency				Opponent Yards Per Rush					Numerical	Double		No
+
 Rush Rank				Opponent Yards Per Rush Rank Among FBS Teams		Numerical	Integer		Yes
+
 Pass Efficiency				Opponent Yards Per Pass Atempt				Numerical	Double		No
+
 Pass Rank				Opponent Yards Per Pass Atempt Rank Among FBS Teams	Numerical	Integer		Yes
+
 Rush Grade				Opponent Offense SP+ Rank + Yards Per Rush		Numerical	Integer		No
+
 Pass Grade				Opponent Offense SP+ Rank + Yards Per Pass Attempt	Numerical	Integer		No
+
 Opponent Play				Run or Pass						Categorical	String		Yes
+
 Yards-To-Go				3rd-and-?						Numerical	Integer		Yes
+
 Yards-To-Goal				# of yards away from touchdown				Numerical	Integer		Yes
+
 Number of Yards Gained			Likely won't be utilized				Numerical	Integer		No
+
 Location				Away, Neutral, Home					Categorical	String		Yes
+
 Result					Conversion,Non-Conversion,Sack,Interception,Fumble	Categorical	String		Yes
 
 ==Important Files Contained in Repository==
@@ -71,6 +89,7 @@ sp_data.txt - Used solely for testing purposes, should be deleted later on
 
 
 ==Sources==
+
 This project could not be done without the following (both for model training and webscraping purposes). These have been instrumental for supplying model input.
 
 https://www.espn.com/college-football/team/schedule/_/id/57/season/2018 (this link is used with the ending '/2019' as well)
