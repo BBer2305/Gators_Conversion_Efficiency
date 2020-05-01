@@ -39,13 +39,14 @@ Result					Conversion,Non-Conversion,Sack,Interception,Fumble	Categorical	String
 
 ==Important Files Contained in Repository==
 
-WARNING: TensorFlow and its features may prove difficult to install properly. This may or may not take several hours to install properly. I found that Protobuf needed be installed as version 3.6.0 for the code to compile properly. I have found TensorFlow 2.0.0 to work best too.
+WARNING: TensorFlow and its features may prove difficult to install properly. This may or may not take several hours to install properly. I found that Protobuf needed be installed as version 3.6.0 for the code to compile properly. I have found TensorFlow 2.0.0 to work best too. The Python code was written in version 3.6.0. Using an older version (particularly below 3.0.0 would cause problems in compiling the code). This code has only been tested in Windows and I cannot gurantee that it would work in a different OS. 
 
 prog.py - File where the model can be interacted with. Only file that needs to be run.
   python prog.py
 model.py - File where model is to be created and trained.
 > python model.py
 > requires 1. numpy, 2. pandas, 3. tensorflow 4. keras 5. sklearn among other libraries to run.
+storage.py - File that stores a few pre-defined lists. It is incorporated by prog.py and is not necessary to understand.
 R_Model.R - Random forest tree created using dataset. Used to check data viability before creating model.py.
   Can be run in R Studio
 Conversion_Results.xlsx - File where data was inserted into.
@@ -65,7 +66,7 @@ https://www.sports-reference.com/cfb/years/2019-team-offense.html (this link is 
 
 https://www.footballoutsiders.com/stats/ncaa/2018
 
-https://www.espn.com/college-football/story/_/id/28251219/sp+-rankings-conference-championship-games
+https://www.espn.com/college-football/story/_/id/28497018/final-sp+-rankings-2019-college-football-season
 
 ==Progress==
 

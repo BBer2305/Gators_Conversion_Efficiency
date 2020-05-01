@@ -1,5 +1,5 @@
 #read csv file and adjust columns
-file <- read.csv("-")
+file <- read.csv("C:/Users/Ben/Documents/Projects/Gators_Conversion_Efficiency/Conversion_Results.csv")
 file$YardsGained <- NULL
 names(file)[1] <- "Down"
 file$Down <- as.factor(file$Down)

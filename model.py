@@ -14,7 +14,8 @@ from tensorflow.keras import layers
 from sklearn.model_selection import train_test_split
 
 tf.keras.backend.set_floatx('float64')
-print(tf.__version__)
+#tf.keras.backend.set_floatx('float32')
+#print(tf.__version__)
 
 file = pd.read_csv("Conversion_Results.csv")
 
@@ -86,18 +87,19 @@ QScore = feature_column.indicator_column(QScore)
 feature_columns.append(QScore)
 
 feature_layer = tf.keras.layers.DenseFeatures(feature_columns)
-
-exit(0)
-
+print(type(train_ds))
+print(type(val_ds))
+print(type(5))
+#exit()
 model = tf.keras.Sequential([
   feature_layer,
   layers.Dense(128, activation='relu'),
   layers.Dense(128, activation='relu'),
-  layers.Dense(5, activation='softmax_cross_entropy_with_logits')
+  layers.Dense(5)
 ])
 
 model.compile(optimizer='adam',
-              loss='binary_crossentropy',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
 
 model.fit(train_ds,
